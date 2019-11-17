@@ -11,7 +11,6 @@ import SimpleSlider from '../components/SimpleSlider'
 
 import mage from '../images/logo/mage1.png';
 import drupal from '../images/logo/drupal1.png';
-import saphybris from '../images/logo/saphybris1.png';
 import shopify from '../images/logo/shopify1.png';
 import wordpress from '../images/logo/wordpress1.png';
 
@@ -55,7 +54,6 @@ const IndexPage = () => (
           <div className="pl-5">
             <img src={mage} alt="Magento" />
             <img src={drupal} alt="Drupal" />
-            <img src={saphybris} alt="Sap Hybris" />
             <img src={shopify} alt="Shopify" />
             <img src={wordpress} alt="Wordpress" />
           </div>
