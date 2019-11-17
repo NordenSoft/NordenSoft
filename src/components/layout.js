@@ -1,10 +1,18 @@
-import React from 'react'
-import Header from './header'
-import ScrollTop from './scrollTop'
+/**
+ * Layout component that queries for data
+ * with Gatsby's useStaticQuery component
+ *
+ * See: https://www.gatsbyjs.org/docs/use-static-query/
+ */
 
-// import styles from './layout.module.css'
-import '../styles/bootstrap.min.css'
-import '../styles/layout.css'
+import React from "react"
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
+
+import Header from "./header"
+import ScrollTop from './scrollTop'
+import "../styles/bootstrap.min.css"
+import "../styles/layout.css"
 import '../styles/slick.min.css'
 
 if (typeof window !== "undefined") {
@@ -16,32 +24,24 @@ if (typeof window !== "undefined") {
   });
 }
 
-const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitle }) => (
-  <>
-    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
-    <div>{children}</div>
-    <ScrollTop />
-    <footer className="footer">
-      <div className="container">
-        <div className='text-center'>
-          {companyInfo && (
-            <div>
-              {companyInfo.name}
-              <br />
-              {companyInfo.address1}
-              <br />
-              {companyInfo.address2 && (
-                <span>
-                  {companyInfo.address2}
-                  <br />
-                </span>
-              )}
-              {companyInfo.zipCode} {companyInfo.city}
-              {companyInfo.country && <span>, {companyInfo.country}</span>}
-            </div>
-          )}
-        </div>
+const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
 
+  return (
+    <>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <div>{children}</div>
+      <ScrollTop />
+      <footer className="footer">
+      <div className="container">
         <div className="text-center">
           © {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a> &amp;
           {` `}
@@ -49,7 +49,12 @@ const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitl
         </div>
       </div>
     </footer>
-  </>
-)
+    </>
+  )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default Layout
