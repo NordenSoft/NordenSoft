@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import Icon from './icons'
-import { cn } from '../lib/helpers'
 
 import logo from "../images/logo.png"
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
