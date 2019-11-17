@@ -1,52 +1,55 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from 'react'
+import Header from './header'
+import ScrollTop from './scrollTop'
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+// import styles from './layout.module.css'
+import '../styles/bootstrap.min.css'
+import '../styles/layout.css'
+import '../styles/slick.min.css'
 
-import Header from "./header"
-import "./layout.css"
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]', {
+    offset: function (anchor, toggle) {
+      return 55;
+    },
+  });
+}
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitle }) => (
+  <>
+    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
+    <div>{children}</div>
+    <ScrollTop />
+    <footer className="footer">
+      <div className="container">
+        <div className='text-center'>
+          {companyInfo && (
+            <div>
+              {companyInfo.name}
+              <br />
+              {companyInfo.address1}
+              <br />
+              {companyInfo.address2 && (
+                <span>
+                  {companyInfo.address2}
+                  <br />
+                </span>
+              )}
+              {companyInfo.zipCode} {companyInfo.city}
+              {companyInfo.country && <span>, {companyInfo.country}</span>}
+            </div>
+          )}
+        </div>
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+        <div className="text-center">
+          © {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a> &amp;
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+          <a href='https://www.gatsbyjs.org'>Gatsby</a>
+        </div>
       </div>
-    </>
-  )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+    </footer>
+  </>
+)
 
 export default Layout
