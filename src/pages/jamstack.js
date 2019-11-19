@@ -8,7 +8,7 @@ const JAMStack = () => {
 
     return (
         <Layout>
-            <SEO title="Om Os" />
+            <SEO title="JAMStack" />
             <div className="py-5">
                 <div className="container py-5">
                     <div className="jamstack">
