@@ -13,7 +13,7 @@ export default class scrollTop extends Component {
       
       window.addEventListener('scroll', () => {
           let activeClass = 'none';
-          if(window.scrollY >= 600){
+          if(window.scrollY >= 400){
               activeClass = 'show';
           }
           if (this._isMounted) {

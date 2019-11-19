@@ -51,7 +51,7 @@ export default class Header extends Component {
   
   render() {
       return (
-          <nav className={`navbar navbar-expand-lg navbar-dark bg-light norden-navbar px-3 ${this.state.activeClass}`}>
+          <nav className={`navbar navbar-expand-lg navbar-light bg-light norden-navbar px-3 ${this.state.activeClass}`}>
               <div className="container">
                   <Link to="/" className="navbar-brand">
                       <img src={logo} width="156" height="35" className="d-inline-block align-top mr-3" alt="" />
@@ -66,6 +66,9 @@ export default class Header extends Component {
                           </li>
                           <li className="nav-item">
                               <Link to="/#services" className="nav-link">Services</Link>
+                          </li>
+                          <li className="nav-item">
+                              <Link to="/jamstack" className="nav-link">JAMStack</Link>
                           </li>
                           <li className="nav-item">
                               <Link to="/#magento" className="nav-link">Magento</Link>
