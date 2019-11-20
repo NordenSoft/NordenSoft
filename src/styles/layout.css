@@ -76,6 +76,17 @@ input:focus,
   padding-top: 89px;
 }
 
+.contact-header{
+  padding: 5rem 0;
+  background: #3d4052;
+  color: #ffffff;
+}
+
+.contact-header h1{
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
 .footer{
   border-top: 1px solid #f1f1f1;
   color: #ffffff;
@@ -166,7 +177,7 @@ input:focus,
 .scrollTop{
   position: fixed;
   bottom: -200px;
-  right: 20px;
+  right: 10px;
   background: #649cc4;
   border: 1px solid #649cc4;
   color: #ffffff;
@@ -176,9 +187,10 @@ input:focus,
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   transition: all 1s ease;
+  z-index: 5;
 }
 .show{
-  bottom: 20px;
+  bottom: 10px;
 }
 
 .scrollTop:focus{
@@ -309,7 +321,7 @@ input:focus,
   top: auto;
   right: auto;
   width: 414px;
-  height: 580px;
+  height: 565px;
   background: #ffffff;
   position: fixed;
   box-shadow: 1px 0 2px 0 rgba(0,0,0,.2);
@@ -317,6 +329,15 @@ input:focus,
   -moz-transition: all 1s ease;
   transition: all 1s ease;
   z-index: 3;
+}
+
+@media screen and (max-width: 768px){
+  .float-form {
+    left: 10px;
+    top: auto;
+    right: 10px;
+    width: auto;
+  }
 }
 
 .float-form-button {
@@ -458,6 +479,15 @@ input:focus,
   text-align: left;
 }
 
+@media screen and (max-width: 768px){ 
+  .jamstack .letter-definition{
+    flex-direction: column;
+  }
+  .letter-definition img {
+    max-width: 60%;
+  }
+}
+
 .jamstack .letter-definition .definitin-content {
   padding-left: 30px;
 }
@@ -470,6 +500,12 @@ input:focus,
 
 .disqualification {
   background: url('https://d33wubrfki0l68.cloudfront.net/a2d014a85df45cdacc5364873fb3cb86c5222d93/57a0e/img/x.svg') no-repeat top left;
+}
+
+@media screen and (max-width: 768px) {
+  .disqualification {
+    padding-left: 58px;
+  }
 }
 
 @media screen and (min-width: 768px) {

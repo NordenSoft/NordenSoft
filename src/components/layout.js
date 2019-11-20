@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import {useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -26,8 +26,9 @@ if (typeof window !== "undefined") {
   });
 }
 
+const Layout = ({ children }) => {
 
-const data = graphql`
+  const data = useStaticQuery(graphql`
   query MyQuery {
     sanitySiteSettings {
       keywords
@@ -36,10 +37,7 @@ const data = graphql`
       author
     }
   } 
-`;
-
-
-const Layout = ({ children }) => {
+`);
 
   return (
     <>

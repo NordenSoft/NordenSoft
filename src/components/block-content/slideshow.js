@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { buildImageObj } from '../../lib/helpers'
-import { imageUrlFor } from '../../lib/image-url'
 
 import styles from './slideshow.module.css'
 
 function Slideshow (props) {
   if (!props.slides) return null
   const len = props.slides.length
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState()
   function handlePrev () {
     setIndex(Math.max(index - 1, 0))
   }

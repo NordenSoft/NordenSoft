@@ -8,19 +8,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const site = graphql`
-    query MyQuery {
-      sanitySiteSettings {
-        keywords
-        title
-        description
-        author
-      }
-    } 
-  `;
+  
+  const site = useStaticQuery(graphql`
+  query SiteQuery {
+    sanitySiteSettings {
+      keywords
+      title
+      description
+      author
+    }
+  } 
+`);
 
   const metaDescription = description || site.description
 
