@@ -1,6 +1,4 @@
 import React from 'react'
-import { buildImageObj } from '../../lib/helpers'
-import { imageUrlFor } from '../../lib/image-url'
 
 import styles from './figure.module.css'
 
