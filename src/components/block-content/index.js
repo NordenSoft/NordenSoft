@@ -21,6 +21,9 @@ const serializers = {
 
         case 'blockquote':
           return <blockquote className="p">{props.children}</blockquote>
+        
+        case 'text-center':
+          return <p className="text-center">{props.children}</p>
 
         default:
           return <p className="p">{props.children}</p>
