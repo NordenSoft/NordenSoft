@@ -1,12 +1,19 @@
 import React from 'react'
-
-import styles from './figure.module.css'
+import { buildImageObj } from '../../lib/helpers'
+import { imageUrlFor } from '../../lib/image-url'
 
 function Figure (props) {
   return (
-    <figure className={styles.root}>
-      {props.asset}
-      <figcaption className={styles.caption}>{props.caption}</figcaption>
+    <figure className='my-2'>
+      {props.asset && (
+        <img
+          src={imageUrlFor(buildImageObj(props))
+            .width(200)
+            .url()}
+          alt={props.alt}
+        />
+      )}
+      <figcaption>{props.caption}</figcaption>
     </figure>
   )
 }

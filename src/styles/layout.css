@@ -68,6 +68,10 @@ input:focus,
   margin: 0 .5rem;
 }
 
+.navbar-light .navbar-brand{
+  width: 156px;
+}
+
 .sticky {
   padding: 5px 0;
 }
@@ -85,6 +89,11 @@ input:focus,
 .contact-header h1{
   color: #ffffff;
   margin-bottom: 30px;
+}
+
+.contact figure{
+  float: left;
+  margin: 5px;
 }
 
 .footer{

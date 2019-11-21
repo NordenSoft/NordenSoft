@@ -1,5 +1,5 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import BlockContent from '../components/block-content'
@@ -51,11 +51,11 @@ const ContactPage = props => {
       <div className="py-5">
         <div className="container py-5">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-8 contact">
               <h1 className="mb-5 font-weight-bold">{page.title}</h1>
               <BlockContent blocks={page._rawBody || []} />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <h1 className="mb-5 font-weight-bold">Adresse:</h1>
                 <strong>Danmark</strong>
                 <p>+45 26 46 36 01<br />

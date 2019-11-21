@@ -29,13 +29,6 @@ import magento4 from '../images/magento/magento-4.png';
 import magento5 from '../images/magento/magento-5.png';
 import magento6 from '../images/magento/magento-6.png';
 
-import mage1 from '../images/magento/magento1.png';
-import mage2 from '../images/magento/magento2.png';
-import mage3 from '../images/magento/magento3.png';
-import mage4 from '../images/magento/magento4.png';
-
-import magentoLogo from '../images/magento/magento-2-logo.png';
-import shopigo3 from '../images/magento/shopigo3-1.png';
 import magentoecommerce from '../images/magento/magento-e-commerce-4.png';
 
 import Jarritos from '../images/cases/jarritosnl.png';
@@ -195,73 +188,6 @@ const IndexPage = () => (
       </div>
     </div>
     {/* Norden 360 */}
-    {/* Magento Block */}
-    <div id="magento" className="container text-center py-5">
-      <div className="row">
-        <div className="col-md-12">
-          <h2>Hvorfor Magento?</h2>
-          <img src={magentoLogo} alt="Magento" />
-          <p>Designet til Vækst, Bygget til Fleksibilitet</p>
-          <p>Magento er en moderne cloud-handelsplatform med et open source-økosystem.</p>
-          <p>Fleksibel for B2C, B2B og hybridløsninger, strækker Magento sig ud over indkøbskurven for enhver handlende oplevelse, herunder e-mail, mobil, i butik, fragt og markedspladser. Se, hvordan vi kan hjælpe din virksomhed.</p>
-        </div>
-      </div>
-      <div className="row py-5">
-        <div className="col-md-4">
-          <div className="col-md-12">
-            <div className="w-iconbox-icon">
-              <img width="128" height="95" src={mage1} className="attachment-full size-full img-fluid" alt="" />
-            </div>
-            <div className="w-iconbox-meta">
-              <h5 className="my-4">Transformer Kunde Oplevelsen</h5>
-              <div className="w-iconbox-text">
-                <p>Tilbyd en uimodståelig og fejlfri købsoplevelse hos hver eneste kunde med Magento Commerce.</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-12">
-            <div className="w-iconbox-icon">
-              <img width="128" height="95" src={mage3} className="attachment-full size-full img-fluid" alt="" />
-            </div>
-            <div className="w-iconbox-meta">
-              <h5 className="my-4">Online med din hjemmeside på kort tid</h5>
-              <div className="w-iconbox-text">
-                <p>Magento er brugervenlig og agil. Med Magento kan din hjemmeside tilpasses dine ønsker. Du bliver Online på kort tid og dermed får skabt ROI hurtigere end nogensinde. Vores erfarne samarbejdspartnere tilbyder skræddersyede grafiske løsninger og har særlige implementerings løsninger for start-up’s og små virksomheder.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 d-flex justify-content-center align-items-center">
-          <img src={shopigo3} alt="shopigo" width="320" height="557" />
-        </div>
-        <div className="col-md-4">
-          <div className="col-md-12">
-            <div className="w-iconbox-icon">
-              <img width="128" height="95" src={mage2} className="attachment-full size-full img-fluid" alt="" />
-            </div>
-            <div className="w-iconbox-meta">
-              <h5 className="my-4">Minimer forretningsomkostninger</h5>
-              <div className="w-iconbox-text">
-                <p>Minimer omkostningerne, følg lagerbeholdningen og salget og automatiser håndteringen af ordremodtagelses aktiviteterne igennem Magentos brugervenlige indstillinger.
-De mange timer du sparer ved at automatisere kan du bruge på at optimere din hjemmeside og forretning.</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-12">
-            <div className="w-iconbox-icon">
-              <img width="128" height="95" src={mage4} className="attachment-full size-full img-fluid" alt="" />
-            </div>
-            <div className="w-iconbox-meta">
-              <h5 className="my-4">Vækst igennem nye kunder</h5>
-              <div className="w-iconbox-text">
-                <p>Integrer mange shopping oplevelser ved blandt andet at inkludere Amazon og eBay. Du kan styre alt dit lager og salg gennem én enkelt produkt kontrol og distributions system for din hjemmeside.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* Magento Block */}
     {/* Fleksibel Block */}
     <div className="container-fluid py-5 fleksibel-bg">
       <div className="container py-5">
@@ -389,46 +315,6 @@ De mange timer du sparer ved at automatisere kan du bruge på at optimere din hj
       </div>
     </div>
     {/* Cases Block */}
-    {/* Service Block */}
-    <div id="services" className="container-fluid service-block py-5">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h2>Service ydelser</h2>
-            <p>Vi håndtere, udvikler, distribuere, måler og optimere mål orienterede service ydelser.</p>
-            <h2>Erfaring</h2>
-            <p>Vi designer bruger oplevelser som vil gøre brugen af din kanal let og enkelt.</p>
-            <p>Bruger oplevelser er et af vores vigtigste nøgler til succes for vores brand, kampagne og produkt. Under design fasen, vi designer din bruger oplevelse på baggrund af indhentede data fra analytics, kunde feedback, markedsundersøgelser, lokal og global uafhængige undersøgelses reporter, ikke-guidet kunder i din fysiske butik og millioner af data resourser for dit brand.</p>
-            <p>Mens vi anvender bruger undersøgelserne, gøre vi med fordel brug af live bruger-test og fokus grupper.</p>
-            <p>Vi anvender bruger oplevelses studier som et multikanal case studie ved at se på Internettet, mobil telefoner, sociale netværker, fysiske butikker og alle netværk. Vores strategi team, kreative team og udviklings team arbejder sammen i bruger undersøgelser samlet med det ønskede formål at fuldføre det bedste studie for dit brand.</p>
-            <h2>Platforme</h2>
-            <p>Vi udvikler, designer og opererer på skalerbar og solid teknologisk platform.</p>
-            <p>Vi udvikler en stærk platform til at repræsentere din brand i en verden, hvor den teknologiske udvikling og muligheden for at være online på forskelllige måder udvikles næsten hverdag.</p>
-            <p>Vi udvikler Omni-channel e-commerce hjemmesider, loyalitet systemer, mobile applikationer, hjemmesider, cms systemer tilpasset dine specifikationer, strategi og markedsføringskampagner af dine brands.</p>
-            <p>Vi udvikler skalerbar platformer som kan imødekomme din stigende kundekreds. Når vi skønner at der på daglig plan er én million smartphone brugere som er koblet til et online netværk, tænker vi også på app´s der kan udvikles til mobiltelefoner, tablets og andre mobile applikationer samt intelligente ure for at imødekomme dit brands behov på det voksende marked.</p>
-            <p>Vi vedligeholder dine applikationer løbende. Vi løser hvilken som helst problem med det samme som vi bliver opmærksom på via vores overvågningssystem.</p>
-            <p>Vi giver hurtig svar på ethvert ønske og behov. Vi opfylder alle dine Brand behov under et tag og udvikler platforme med vores strategi, bruger erfaring og vores kreative team.</p>
-            <h2>Kampagner</h2>
-            <p>Hver brand har en god historie. Vi puster sjæl ind i din historie, distribuere, måler det på de rigtige kanaler.</p>
-            <p>Vi fokusere på burger oplevelser og et stærkt infrastruktur baseret på strategiske beslutninger og overvejelser uden at tage højde for dit brands størrelse; gennemtænker vi alle udfordringer der måtte være, som udfordringer der skal tages.</p>
-            <p>Vi bringer liv til din kampagne ved at implementere vores data-orienteret og kreative tilgang.</p>
-            <p>Vi udfører programmering og producer indhold til små hjemmesider, skaber messenger bot, Facebook, skræddersyede små hjemmesider til Instagram kontoen, mobile applikationer, hjemmesider og social netværk.</p>
-            <p>Vi anvender effektivt A/B test, media planlægning, studio production, visual design I vores kampagner.</p>
-            <p>Vi anvender hele Internettet, tablets, mobile enheder, smart watches, virtuel reality briller, 3D print, smart TV, din fysiske butik, udendøres reklame søjler, de sociale netværk, viral netværk og anvender populære personer/ influencers til at skabe hype omkring dine produkter med vores omnichannel tilgang i alle de kampagner vi er involveret i.</p>
-            <p>Alle brands har deres egen historie, som en del af det forklare det historien og vores ansvar. Derfor checker vores analytiker altid virkninger og effekten af vores kampagner og informere dig i form af en rapport om hvor effektiv kampagnen har været, hvor mange mennesker er vi nået ud til, hvordan feedbacken har været, hvilken vej processen har kurs and din ROI.</p>
-            <p>Når vi arbejder på din kampagne, har drømmene ingen grænser, det er første skridt. Vi ønsker at møde alle dine ønsker og krav på det strategiske niveau, bruger oplevelser og den kreative samt platform delen.</p>
-            <h2>Strategi</h2>
-            <p>Vi tager din brand et skridt videre ved at undersøge og udvikle de faktorer som bringer dit brand og mulighederne sammen.</p>
-            <p>Vi sørger for at du er i stand til at gode beslutninger for dit brand, din forretning og dit projekt ved at analysere den information vi har hentet via big data, sociale medier, virksomheds regnskaber, research rapporter fra uafhængige institutioner, din analytiske output, markedsundersøgelser, kunde feedback og hundrede af ikke klassificeret databaser, med vores data analyse produkt.</p>
-            <p>Beslutning om strategiske markeder? Beslutning om hvilken vej din projekt skal gå? Hvilke muligheder du måske vil miste i lyset af big data? Hvad er effekten af Y ekspansion ved X marked gjort af dit brand? Er du ikke sikker på ”boomerang” effekten af din store investering som du foretog dig på Nettet til X kurs?</p>
-            <p>Er smart ure, virtuel reality briller, flyvende biler, fragt droner, fantastiske mobile applikationer, spektakulære fjernsyns reklamer musik i dine øre; men hvad sker der hvis de er forstyrrelser og ineffektive aktiviteter for dit brands muligheder som et direkte resultat af manglende forudgående analyse arbejde. Hvad sker der hvis du lære alt dette når du venter på ROI af din million investering?</p>
-            <p>Vi går efter at fjerne “gid vi kunne forsøge” tanken og sætningen ved at sikre os en grundig undersøgelse og analyse af forholdene markedet.</p>
-            <p>Vi analysere din strategi ved at stimulere den i krigslignende med nyt data og fra dag til dag og vores teknologiske potentiale og vi arbejder også for du ikke skal møde udfordringer på din vej.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* Service Block */}
   </Layout>
 )
 
