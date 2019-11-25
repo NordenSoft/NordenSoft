@@ -14,7 +14,6 @@ const AboutPage = () => {
         title
         _rawBody
       }
-    
     }
   `
   );

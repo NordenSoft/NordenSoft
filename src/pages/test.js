@@ -1,33 +1,15 @@
 import React, { Component } from 'react'
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { graphql } from 'gatsby'
-import { imageUrlFor } from '../lib/image-url'
+import SEO from '../components/seo'
+import Layout from '../components/layout'
 import groq from 'groq'
 import client from '../../client'
+import { imageUrlFor } from '../lib/image-url'
 import BlockContent from '../components/block-content'
-import SimpleSlider from '../components/SimpleSlider'
 
-export const query = graphql`
-  {
-    allSanityCases {
-      edges {
-        node {
-          id
-          image {
-            asset {
-              _id
-            }
-          }
-          link
-          name
-        }
-      }
-    }
-  }
-`
+// import { graphql } from 'gatsby'
 
-export default class index extends Component {
+export default class test extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -47,38 +29,6 @@ export default class index extends Component {
       this.setState({
         Posts: x.map((post) => {
           switch (post._type) {
-            case 'homeSlideBlock':
-              return (
-                <div id="oversigt" className="container mt-5 py-5">
-                  <div className="row">
-                    <div className="col-md-8">
-                      <div className="pl-5">
-                        {post.imageSections.map(q => {
-                          return (
-                            <img
-                              src={imageUrlFor(q.asset)
-                                .url()}
-                              alt={post.title}
-                              className="img-fluid"
-                            />
-                          );
-                        })}
-                      </div>
-                      <div className="p-5">
-                        <BlockContent blocks={post.body || []} />
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="sliderContainer">
-                        <div className="slideWrap">
-                          <div className="sliderFrame"></div>
-                          <SimpleSlider />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
             case 'customersBlock':
               return (
                 <div className="container-fluid kunder-bg py-5">
@@ -91,7 +41,7 @@ export default class index extends Component {
                             src={imageUrlFor(q.asset)
                               .url()}
                             alt={post.title}
-                            className="mx-2 img-fluid"
+                            className="mx -2 img-fluid"
                           />
                         );
                       })}
@@ -145,7 +95,7 @@ export default class index extends Component {
                               />
                             </div>
                             <div className="w-iconbox-meta">
-                              <h5 className="my-4">{q.title}</h5>
+                                <h5 className="my-4">{ q.title }</h5>
                               <div className="w-iconbox-text">
                                 <p>{q.description}</p>
                               </div>
@@ -201,59 +151,12 @@ export default class index extends Component {
   }
 
   render() {
-    const { data, errors } = this.props
-    if (errors) {
-      return (
-        <Layout>
-          Error
-        </Layout>
-      )
-    }
-    const cases = data.allSanityCases.edges
-
     return (
       <Layout>
         <SEO title={'Contact'} />
-
         {this.state.Posts}
-
-        <div id="cases" className="container-fluid cases-block py-5">
-          <div className="container text-center py-5">
-            <div className="row">
-              <div className="col-md-12">
-                <h2>Cases</h2>
-                <p>
-                  Magento eco-system er hjem for 5 passionerede web designere og udvikler som er fokuserede på at udvikle utrolige ting til vores platform. Fra elegante temaer og praktiske apps til fuld funktionelle e-commerce hjemmesider. Vores design partnere arbejder utrætteligt på at skubbe grænserne for hvad der er muligt med Magento.
-              </p>
-              </div>
-            </div>
-            <div className="row py-5 mt-5">
-              {
-                cases.map((query, i) => {
-                  return (
-                    <div key={i} className="col-md-4">
-                      <h4>
-                        <img
-                          src={imageUrlFor(query.node.image)
-                            .width(290)
-                            .height(244)
-                            .url()}
-                          className="attachment-full size-full img-fluid"
-                          alt={query.node.name}
-                        />
-                        <a href={query.node.link} target="_blank" rel="noopener noreferrer" data-slimstat="5">{query.node.name}</a>
-                      </h4>
-                    </div>
-                  )
-                })
-              }
-            </div>
-          </div>
-        </div>
-
       </Layout>
     );
   }
 
 }
-
