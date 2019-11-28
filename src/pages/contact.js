@@ -26,8 +26,11 @@ export const query = graphql`
           _rawBank
         }
       }
+    },
+    header: sanitySiteExtra {
+      _rawContactHeader
     }
-  }  
+  }
 `
 
 const ContactPage = props => {
@@ -58,9 +61,10 @@ const ContactPage = props => {
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
-              <h1>Tag fat i os!</h1>
+              <BlockContent blocks={data.header._rawContactHeader || []} />
+              {/* <h1>Tag fat i os!</h1>
               <p>Vi er klar til at løse både store og små udfordringer.</p>
-              <p>Ring til os i dag, og få et bud på, hvordan vi sammen gør dit projekt til en succes.</p>
+              <p>Ring til os i dag, og få et bud på, hvordan vi sammen gør dit projekt til en succes.</p> */}
             </div>
           </div>
         </div>

@@ -123,18 +123,16 @@ input:focus,
   text-decoration: none;
   color: #649cc4;
 }
-.footer-link{
-  color: #f58572 !important;
-}
-.footer-link:hover{
-  color: #f58572 !important;
-  text-decoration: underline !important;
-}
+
 .footer-top{
   background: #252838;
 }
+.footer-top a{
+  color: #f58572 !important;
+}
 .footer-top a:hover{
-  color: #91929a;
+  color: #f58572 !important;
+  text-decoration: underline !important;
 }
 .footer-top p{
   font-size: .9rem;
@@ -148,6 +146,12 @@ input:focus,
   font-weight: normal;
   text-decoration: none;
   color: #649cc4;
+}
+.footer-social a{
+  color: #ffffff !important;
+}
+.footer-social a:hover{
+  color: #91929a !important;
 }
 .footer-social{
   display: flex;
