@@ -3,14 +3,31 @@ import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import BlockContent from '../components/block-content'
+import BlockText from '../components/block-text'
 
 export const query = graphql`
   query ContactPageQuery {
     page: sanityPage(_id: { regex: "/(drafts.|)contact/" }) {
       title
       _rawBody
+    },
+    info: allSanityCompanyInfo {
+      edges {
+        node {
+          name
+          zipCode
+          email
+          country
+          city
+          address2
+          address1
+          CVR
+          phone
+          _rawBank
+        }
+      }
     }
-  }
+  }  
 `
 
 const ContactPage = props => {
@@ -26,13 +43,13 @@ const ContactPage = props => {
   }
 
   const page = data.page
+  const info = data.info.edges[0].node
 
   if (!page) {
     throw new Error(
       'Missing "Contact" page data. Open the studio at http://localhost:3333 and add "Contact" page data and restart the development server.'
     )
   }
-
 
   return (
     <Layout>
@@ -57,29 +74,25 @@ const ContactPage = props => {
             </div>
             <div className="col-md-4">
               <h1 className="mb-5 font-weight-bold">Adresse:</h1>
-                <strong>Danmark</strong>
-                <p>+45 26 46 36 01<br />
-                www.nordensoft.dk</p>
-
-                <strong>Holland</strong>
-                <p>+45 26 46 36 01<br />
-                www.nordensoft.nl</p>
-
-                <strong>Schweiz</strong>
-                <p>+45 26 46 36 01<br />
-                www.nordensoft.ch</p>
-
-                <strong>Østrig</strong>
-                <p>+45 26 46 36 01<br />
-                www.nordensoft.at</p>
-
-                <strong>Tyskland</strong>
-                <p>+45 26 46 36 01<br />
-                www.nordensoft.de</p>
-
-                <strong>Sverige</strong>
-                <p>+45 26 46 36 01<br />
-                www.nordensoft.se</p>
+              <p>
+                <strong>{info.name}</strong>
+              </p>
+              <p>
+                {info.address1} <br />
+                {info.address2 ? info.address2 + '<br />' : null}
+                {info.zipCode} <br />
+                <strong>{info.city} / {info.country}</strong> <br />
+              </p>
+              <p>
+                {info.email} <br />
+                {info.phone} <br />
+              </p>
+              <p>
+                {info.CVR} <br />
+              </p>
+              <p>
+                <BlockText blocks={info._rawBank} />
+              </p>
             </div>
           </div>
         </div>

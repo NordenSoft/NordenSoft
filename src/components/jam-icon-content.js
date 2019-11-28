@@ -1,8 +1,5 @@
 import BaseBlockContent from '@sanity/block-content-to-react'
 import React from 'react'
-import Figure from './figure'
-import Persons from './persons'
-// import Slideshow from './slideshow'
 
 const serializers = {
   types: {
@@ -30,18 +27,9 @@ const serializers = {
           return <p className="p">{props.children}</p>
       }
     },
-    figure (props) {
-      return <Figure {...props.node} />
-    },
-    persons (props) {
-      return <Persons {...props.node} />
-    },
-    // slideshow (props) {
-    //   return <Slideshow {...props.node} />
-    // }
   }
 }
 
-const BlockContent = ({ blocks }) => <BaseBlockContent blocks={blocks} serializers={serializers} />
+const jamIconContent = ({ blocks }) => <BaseBlockContent blocks={blocks} serializers={serializers} />
 
-export default BlockContent
+export default jamIconContent

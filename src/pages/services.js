@@ -23,7 +23,7 @@ const Services = () => {
 
     return (
         <Layout>
-            <SEO title="Om Os" />
+            <SEO title={page.title} />
             <div className="py-5">
                 <div className="container py-5">
                     <BlockContent blocks={page._rawBody || []} />

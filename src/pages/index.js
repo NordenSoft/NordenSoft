@@ -7,6 +7,7 @@ import groq from 'groq'
 import client from '../../client'
 import BlockContent from '../components/block-content'
 import SimpleSlider from '../components/SimpleSlider'
+// import Img from "gatsby-image"
 
 export const query = graphql`
   {
@@ -45,21 +46,22 @@ export default class index extends Component {
       // console.log(JSON.stringify(res.result))
       let x = res[0].sections;
       this.setState({
-        Posts: x.map((post) => {
+        Posts: x.map((post, i) => {
           switch (post._type) {
             case 'homeSlideBlock':
               return (
-                <div id="oversigt" className="container mt-5 py-5">
+                <div id="oversigt" className="container mt-5 py-5" key={i}>
                   <div className="row">
                     <div className="col-md-8">
                       <div className="pl-5">
-                        {post.imageSections.map(q => {
+                        {post.imageSections.map((q, i) => {
                           return (
                             <img
                               src={imageUrlFor(q.asset)
                                 .url()}
                               alt={post.title}
                               className="img-fluid"
+                              key={i}
                             />
                           );
                         })}
@@ -81,17 +83,18 @@ export default class index extends Component {
               );
             case 'customersBlock':
               return (
-                <div className="container-fluid kunder-bg py-5">
+                <div className="container-fluid kunder-bg py-5" key={i}>
                   <div className="row">
                     <div className="col-md-12 text-center">
                       <h2 className="mb-5">{post.title}</h2>
-                      {post.sections.map(q => {
+                      {post.sections.map((q, i) => {
                         return (
                           <img
                             src={imageUrlFor(q.asset)
                               .url()}
                             alt={post.title}
                             className="mx-2 img-fluid"
+                            key={i}
                           />
                         );
                       })}
@@ -101,7 +104,7 @@ export default class index extends Component {
               );
             case 'leftImageBlock':
               return (
-                <div className="container py-5">
+                <div className="container py-5"  key={i}>
                   <h2 className="text-center py-3">{post.title}</h2>
                   <div className="row pt-5">
                     <div className="col-md-7">
@@ -122,7 +125,7 @@ export default class index extends Component {
               );
             case 'gridBlock1':
               return (
-                <div className="container-fluid kunder-bg py-5">
+                <div className="container-fluid kunder-bg py-5"  key={i}>
                   <div className="container text-center py-5">
                     <div className="row">
                       <div className="col-md-12">
@@ -132,9 +135,9 @@ export default class index extends Component {
                   </div>
                   <div className="container text-center py-5">
                     <div className="row">
-                      {post.giridSection.map(q => {
+                      {post.giridSection.map((q, i) => {
                         return (
-                          <div className="col-md-4">
+                          <div className="col-md-4" key={i}>
                             <div className="w-iconbox-icon">
                               {/* <img width="128" height="95" src={magento1}  alt="" /> */}
                               <img
@@ -159,7 +162,7 @@ export default class index extends Component {
               );
             case 'beigeBlock':
               return (
-                <div className="container-fluid py-5 fleksibel-bg">
+                <div className="container-fluid py-5 fleksibel-bg"  key={i}>
                   <div className="container py-5">
                     <div className="row">
                       <div className="col-md-12">
@@ -171,7 +174,7 @@ export default class index extends Component {
               );
             case 'rightImageBlock':
               return (
-                <div className="container-fluid kunder-bg py-5">
+                <div className="container-fluid kunder-bg py-5"  key={i}>
                   <div className="container py-5">
                     <div className="row">
                       <div className="col-md-8 p-5">
@@ -213,7 +216,7 @@ export default class index extends Component {
 
     return (
       <Layout>
-        <SEO title={'Contact'} />
+        <SEO title={'Norden Soft'} />
 
         {this.state.Posts}
 
