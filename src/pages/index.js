@@ -74,7 +74,7 @@ export default class index extends Component {
                       <div className="sliderContainer">
                         <div className="slideWrap">
                           <div className="sliderFrame"></div>
-                          <SimpleSlider />
+                          <SimpleSlider data={post.slideImageSections}/>
                         </div>
                       </div>
                     </div>

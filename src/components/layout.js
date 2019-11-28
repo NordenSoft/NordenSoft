@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import {useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -30,22 +30,51 @@ const Layout = ({ children }) => {
 
   const data = useStaticQuery(graphql`
   query MyQuery {
-    sanitySiteSettings {
+    site: sanitySiteSettings {
       keywords
       title
       description
       author
+      logo {
+        asset {
+          id
+          url
+          path
+        }
+      }
+    },
+    footer: sanitySiteExtra {
+      _rawContactFormText
+      _rawContanctFormImage
+      _rawContactHeader
+      _rawFooterContactBlock
+      _rawFooterFindBlock
+      _rawFooterLogo
+      _rawFooterText
+      contactFormButtonText
+      email
+      facebook
+      linkedin
+      twitter
+      whatsapp
+    },
+    header: sanitySiteExtra {
+      email
+      facebook
+      linkedin
+      twitter
+      whatsapp
     }
   } 
 `);
 
   return (
     <>
-      <Header siteTitle={data.title} />
+      <Header siteTitle={data.site.title} siteSettings={data.site} data={data.header}/>
       <div>{children}</div>
       <ScrollTop />
-      <FloatForm />
-      <Footer />
+      <FloatForm data={data.footer}/>
+      <Footer data={data.footer} />
     </>
   )
 }
