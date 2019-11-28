@@ -59,7 +59,7 @@ export default class floatForm extends Component {
                         >
                             <input type="text" name="name" placeholder="Dit navn" />
                             <input type="email" name="email" placeholder="Din email" />
-                            <input type="tel" name="phone" placeholder="Dit telefonnummer" />
+                            <input type="text" name="phone" placeholder="Dit telefonnummer" />
                             <button className="btn" type="submit">START DIN VÆKST HER</button>
                         </form>
                     </div>
