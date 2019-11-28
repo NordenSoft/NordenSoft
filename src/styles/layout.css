@@ -43,6 +43,7 @@ input:focus,
 .norden-navbar{
   position: fixed;
   width: 100%;
+  padding: 5px 0 !important;
   top: 0;
   /* background-color: #649cc4 !important; */
   /* background-image: linear-gradient( -74deg,#23afbb 0%,#296dbf var(--hero-bg-gradient-x,50%),#306bc5 100% ); */

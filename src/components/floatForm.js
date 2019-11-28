@@ -55,7 +55,6 @@ export default class floatForm extends Component {
                             name="contact" 
                             method="post"
                             data-netlify="true"
-                            data-netlify-honeypot="bot-field"
                         >
                             <input type="text" name="name" placeholder="Dit navn" />
                             <input type="email" name="email" placeholder="Din email" />
