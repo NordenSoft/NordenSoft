@@ -51,7 +51,12 @@ export default class floatForm extends Component {
                     </div>
                     <div className="float-form-content">
                         <BlockContent blocks={this.state.data._rawContactFormText || []} />
-                        <form method="post">
+                        <form 
+                            name="contact" 
+                            method="post"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
+                        >
                             <input type="text" name="name" placeholder="Dit navn" />
                             <input type="email" name="email" placeholder="Din email" />
                             <input type="tel" name="tel" placeholder="Dit telefonnummer" />
