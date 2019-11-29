@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { IoMdClose } from 'react-icons/io';
 import BlockContent from './block-content';
+import { imageUrlFor } from '../lib/image-url'
+
 
 export default class floatForm extends Component {
     _isMounted = false;
@@ -43,20 +45,26 @@ export default class floatForm extends Component {
                 <button className={`float-form-button btn ${this.state.buttonClass}`} onClick={this._toggleForm}>
                     {/* <strong>{ this.state.data.contactFormButtonText }</strong> */}
                     <img className="img-fluid"
-                    src="//fc-use1-00-pics-bkt-00.s3.amazonaws.com/90d3c4b96f2431e9f2198d421d3b70dfdc23ad21433ee8b3e1a1a6ca3dea8d6d/f_faq-image/u_4439b25a537ad6dde667c9e6166554a7fb27ac99f7d18f4ed00100d6f8f827a7/img_1543253474352.png" 
-                    alt="button-icon"
+                        src="//fc-use1-00-pics-bkt-00.s3.amazonaws.com/90d3c4b96f2431e9f2198d421d3b70dfdc23ad21433ee8b3e1a1a6ca3dea8d6d/f_faq-image/u_4439b25a537ad6dde667c9e6166554a7fb27ac99f7d18f4ed00100d6f8f827a7/img_1543253474352.png"
+                        alt="button-icon"
                     />
                 </button>
                 <div className={`float-form ${this.state.formClass}`}>
                     <div className="float-form-head">
+                        <img
+                            src={imageUrlFor(this.state.data._rawContanctFormImage)
+                                .url()}
+                            className="attachment-full size-full img-fluid"
+                            alt="header"
+                        />
                         <button className="float-form-close" onClick={this._toggleForm}>
                             <IoMdClose />
                         </button>
                     </div>
                     <div className="float-form-content">
                         <BlockContent blocks={this.state.data._rawContactFormText || []} />
-                        <form 
-                            name="contact" 
+                        <form
+                            name="contact"
                             method="post"
                             data-netlify="true"
                         >
