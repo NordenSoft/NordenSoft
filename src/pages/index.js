@@ -50,7 +50,7 @@ export default class index extends Component {
           switch (post._type) {
             case 'homeSlideBlock':
               return (
-                <div id="oversigt" className="container mt-5 py-5" key={i}>
+                <div id="oversigt" className="container mt-5 pt-5 pb-5" key={i}>
                   <div className="row">
                     <div className="col-md-8">
                       <div className="pl-5">
@@ -83,7 +83,7 @@ export default class index extends Component {
               );
             case 'customersBlock':
               return (
-                <div className="container-fluid kunder-bg py-5" key={i}>
+                <div className="container-fluid kunder-bg pt-5 pb-5 " key={i}>
                   <div className="row">
                     <div className="col-md-12 text-center">
                       <h2 className="mb-5">{post.title}</h2>
@@ -104,7 +104,7 @@ export default class index extends Component {
               );
             case 'leftImageBlock':
               return (
-                <div className="container py-5"  key={i}>
+                <div className="container pt-5 pb-5 "  key={i}>
                   <h2 className="text-center py-3">{post.title}</h2>
                   <div className="row pt-5">
                     <div className="col-md-7">
@@ -125,15 +125,15 @@ export default class index extends Component {
               );
             case 'gridBlock1':
               return (
-                <div className="container-fluid kunder-bg py-5"  key={i}>
-                  <div className="container text-center py-5">
+                <div className="container-fluid kunder-bg pt-5 pb-5 "  key={i}>
+                  <div className="container text-center pt-5 pb-5 ">
                     <div className="row">
                       <div className="col-md-12">
                         <BlockContent blocks={post.body || []} />
                       </div>
                     </div>
                   </div>
-                  <div className="container text-center py-5">
+                  <div className="container text-center pt-5 pb-5 ">
                     <div className="row">
                       {post.giridSection.map((q, i) => {
                         return (
@@ -162,8 +162,8 @@ export default class index extends Component {
               );
             case 'beigeBlock':
               return (
-                <div className="container-fluid py-5 fleksibel-bg"  key={i}>
-                  <div className="container py-5">
+                <div className="container-fluid pt-5 pb-5  fleksibel-bg"  key={i}>
+                  <div className="container pt-5 pb-5 ">
                     <div className="row">
                       <div className="col-md-12">
                         <BlockContent blocks={post.body || []} />
@@ -174,11 +174,11 @@ export default class index extends Component {
               );
             case 'rightImageBlock':
               return (
-                <div className="container-fluid kunder-bg py-5"  key={i}>
-                  <div className="container py-5">
+                <div className="container-fluid kunder-bg pt-5 pb-5 "  key={i}>
+                  <div className="container pt-5 pb-5 ">
                     <div className="row">
                       <div className="col-md-8 p-5">
-                        <h2 className="py-5">{post.title}</h2>
+                        <h2 className="pt-5 pb-5 ">{post.title}</h2>
                         <BlockContent blocks={post.body || []} />
                       </div>
                       <div className="col-md-4">
@@ -220,8 +220,8 @@ export default class index extends Component {
 
         {this.state.Posts}
 
-        <div id="cases" className="container-fluid cases-block py-5">
-          <div className="container text-center py-5">
+        <div id="cases" className="container-fluid cases-block pt-5 pb-5 ">
+          <div className="container text-center pt-5 pb-5 ">
             <div className="row">
               <div className="col-md-12">
                 <h2>Cases</h2>
@@ -230,7 +230,7 @@ export default class index extends Component {
               </p>
               </div>
             </div>
-            <div className="row py-5 mt-5">
+            <div className="row pt-5 pb-5  mt-5">
               {
                 cases.map((query, i) => {
                   return (
