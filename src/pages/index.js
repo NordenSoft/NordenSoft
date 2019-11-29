@@ -53,7 +53,10 @@ export default class index extends Component {
                 <div id="oversigt" className="container mt-5 pt-5 pb-5" key={i}>
                   <div className="row">
                     <div className="col-md-8">
-                      <div className="pl-5">
+                      <div className="pb-2">
+                        <BlockContent blocks={post.body || []} />
+                      </div>
+                      <div className="pl-2">
                         {post.imageSections.map((q, i) => {
                           return (
                             <img
@@ -65,9 +68,6 @@ export default class index extends Component {
                             />
                           );
                         })}
-                      </div>
-                      <div className="p-5">
-                        <BlockContent blocks={post.body || []} />
                       </div>
                     </div>
                     <div className="col-md-4">
@@ -217,9 +217,7 @@ export default class index extends Component {
     return (
       <Layout>
         <SEO title={'Norden Soft'} />
-
         {this.state.Posts}
-
         <div id="cases" className="container-fluid cases-block pt-5 pb-5 ">
           <div className="container text-center pt-5 pb-5 ">
             <div className="row">
