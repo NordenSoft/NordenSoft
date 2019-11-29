@@ -209,7 +209,7 @@ input:focus,
   z-index: 5;
 }
 .show{
-  bottom: 10px;
+  bottom: 85px;
 }
 
 .scrollTop:focus{
@@ -335,10 +335,10 @@ input:focus,
 *   Float Form Css
 ######################## */
 .float-form {
-  left: 10px;
+  left: auto;
   bottom: -590px;
   top: auto;
-  right: auto;
+  right: 10px;
   width: 414px;
   height: 565px;
   background: #ffffff;
@@ -360,15 +360,17 @@ input:focus,
 }
 
 .float-form-button {
-  left: 10px;
+  left: auto;
   bottom: -75px;
   top: auto;
-  right: auto;
+  right: 10px;
   padding: 10px;
   margin: 0px;
-  width: 295px;
+  width: 65px;
   height: 65px;
   border-radius: 1px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   font-size: 12px;
   display: flex;
   justify-content: center;
