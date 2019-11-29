@@ -340,7 +340,7 @@ input:focus,
   top: auto;
   right: 10px;
   width: 414px;
-  height: 565px;
+  height: auto;
   background: #ffffff;
   position: fixed;
   box-shadow: 1px 0 2px 0 rgba(0,0,0,.2);
