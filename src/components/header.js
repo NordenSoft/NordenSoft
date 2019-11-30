@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import { imageUrlFor } from '../lib/image-url'
@@ -12,7 +11,6 @@ export default class Header extends Component {
             activeClass: 'none',
             toggleNav: false,
             navbarCss: 'collapse navbar-collapse',
-            siteSettings: props.siteSettings,
             data: props.data,
         }
 
@@ -56,15 +54,13 @@ export default class Header extends Component {
             <nav className={`navbar navbar-expand-lg navbar-light bg-light norden-navbar px-3 ${this.state.activeClass}`}>
                 <div className="container">
                     <Link to="/" className="navbar-brand">
-                        {/* <img src={logo} width="156" height="35" className="d-inline-block align-top mr-3" alt="" /> */}
                         <img
-                              src={imageUrlFor(this.state.siteSettings.logo)
+                            src={imageUrlFor(this.props.siteSettings.logo)
                                 .width(156)
                                 .url()}
-                              alt='logo'
-                              className="d-inline-block align-top mr-3"
-                            />
-                        {/* <Logo /> */}
+                            alt='logo'
+                            className="d-inline-block align-top mr-3"
+                        />
                     </Link>
                     <button className="navbar-toggler" type="button" onClick={this.navbarOpen} >
                         <span className="navbar-toggler-icon"></span>
@@ -95,16 +91,16 @@ export default class Header extends Component {
                         </ul>
                     </div>
                     <span className="navbar-text d-none d-sm-block">
-                        <a href={this.state.data.linkedin ? this.state.data.linkedin : '#'} target="_blank" rel="noopener noreferrer">
+                        <a href={this.props.data.linkedin ? this.props.data.linkedin : '#'} target="_blank" rel="noopener noreferrer">
                             <FaLinkedinIn />
                         </a>
-                        <a href={this.state.data.facebook ? this.state.data.facebook : '#'} target="_blank" rel="noopener noreferrer">
+                        <a href={this.props.data.facebook ? this.props.data.facebook : '#'} target="_blank" rel="noopener noreferrer">
                             <FaFacebookF />
                         </a>
-                        <a href={this.state.data.whatsapp ? this.state.data.whatsapp : '#'} target="_blank" rel="noopener noreferrer">
+                        <a href={this.props.data.whatsapp ? this.props.data.whatsapp : '#'} target="_blank" rel="noopener noreferrer">
                             <FaWhatsapp />
                         </a>
-                        <a href={this.state.data.email ? this.state.data.email : '#'} target="_blank" rel="noopener noreferrer">
+                        <a href={this.props.data.email ? this.props.data.email : '#'} target="_blank" rel="noopener noreferrer">
                             <FaEnvelope />
                         </a>
                     </span>

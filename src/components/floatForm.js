@@ -43,7 +43,7 @@ export default class floatForm extends Component {
         return (
             <div>
                 <button className={`float-form-button btn ${this.state.buttonClass}`} onClick={this._toggleForm}>
-                    {/* <strong>{ this.state.data.contactFormButtonText }</strong> */}
+                    {/* <strong>{ this.props.data.contactFormButtonText }</strong> */}
                     <img className="img-fluid"
                         src="//fc-use1-00-pics-bkt-00.s3.amazonaws.com/90d3c4b96f2431e9f2198d421d3b70dfdc23ad21433ee8b3e1a1a6ca3dea8d6d/f_faq-image/u_4439b25a537ad6dde667c9e6166554a7fb27ac99f7d18f4ed00100d6f8f827a7/img_1543253474352.png"
                         alt="button-icon"
@@ -52,7 +52,7 @@ export default class floatForm extends Component {
                 <div className={`float-form ${this.state.formClass}`}>
                     <div className="float-form-head">
                         <img
-                            src={imageUrlFor(this.state.data._rawContanctFormImage)
+                            src={imageUrlFor(this.props.data.contanctFormImage)
                                 .url()}
                             className="attachment-full size-full img-fluid"
                             alt="header"
@@ -62,7 +62,7 @@ export default class floatForm extends Component {
                         </button>
                     </div>
                     <div className="float-form-content">
-                        <BlockContent blocks={this.state.data._rawContactFormText || []} />
+                        <BlockContent blocks={this.props.data.contactFormText || []} />
                         <form
                             name="contact"
                             method="post"
