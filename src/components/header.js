@@ -87,10 +87,10 @@ export default class Header extends Component {
                                 <Link to="/#cases" className="nav-link">Cases</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/about" className="nav-link">Om os</Link>
+                                <Link to="/om-os" className="nav-link">Om os</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/contact" className="nav-link">Kontakt</Link>
+                                <Link to="/kontakt" className="nav-link">Kontakt</Link>
                             </li>
                         </ul>
                     </div>

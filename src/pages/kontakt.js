@@ -7,56 +7,6 @@ import Layout from '../components/layout'
 import BlockContent from '../components/block-content'
 import BlockText from '../components/block-text'
 
-// export const query = graphql`
-//   query ContactPageQuery {
-//     page: sanityPage(_id: { regex: "/(drafts.|)contact/" }) {
-//       title
-//       _rawBody
-//     },
-//     info: allSanityCompanyInfo {
-//       edges {
-//         node {
-//           name
-//           zipCode
-//           email
-//           country
-//           city
-//           address2
-//           address1
-//           CVR
-//           phone
-//           _rawBank
-//         }
-//       }
-//     },
-//     header: sanitySiteExtra {
-//       _rawContactHeader
-//     }
-//   }
-// `
-
-// const { data, errors } = props
-
-// if (errors) {
-//   return (
-//     <Layout>
-//       Error
-//     </Layout>
-//   )
-// }
-
-// const page = data.page
-// const info = data.info.edges[0].node
-
-// *[_type == 'companyInfo']{name, zipCode, email, country, city, address2, address1, CVR, phone, _rawBank}
-
-// if (!page) {
-//   throw new Error(
-//     'Missing "Contact" page data. Open the studio at http://localhost:3333 and add "Contact" page data and restart the development server.'
-//   )
-// }
-
-
 export default class contact extends Component {
   constructor(props) {
     super(props);

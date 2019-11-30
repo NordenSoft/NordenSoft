@@ -5,7 +5,7 @@ import BlockContent from '../components/block-content'
 import groq from 'groq'
 import client from '../../client'
 
-export default class Services extends React.Component {
+export default class AboutPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,18 +19,19 @@ export default class Services extends React.Component {
   }
 
   async renderBody() {
-    await client.fetch(groq`*[_type == 'page' && _id == 'services']{title, body}`).then(res => {
-        let page = res[0];
+    await client.fetch(groq`*[ _type == 'page' && _id == 'about' ]{title, body}`).then(res => {
+      let page = res[0];
       this.setState({ page });
-    });
+    })
   }
 
   render() {
     return (
       <Layout>
-        <SEO title={this.state.page.title} />
+        <SEO title="Om Os" />
         <div className="py-5">
           <div className="container py-5">
+            <h1 className="text-center mb-5 font-weight-bold">{this.state.page.title}</h1>
             <BlockContent blocks={this.state.page.body || []} />
           </div>
         </div>
