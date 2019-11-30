@@ -32,6 +32,7 @@ export default class index extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      Cases: '',
       Posts: '',
     }
     this.renderPosts = this.renderPosts.bind(this);
@@ -42,10 +43,17 @@ export default class index extends Component {
   }
 
   renderPosts = async () => {
-    await client.fetch(groq`*[_type == 'page' && _id == 'home']`).then((res) => {
+    await client.fetch(groq`
+    *[_type == 'page' && _id == 'home']{
+      ...,
+      'cases': *[ _type == 'cases']
+    }
+    `).then((res) => {
       // console.log(JSON.stringify(res.result))
       let x = res[0].sections;
+      let Cases = res[0].cases;
       this.setState({
+        Cases,
         Posts: x.map((post, i) => {
           switch (post._type) {
             case 'homeSlideBlock':
@@ -197,22 +205,13 @@ export default class index extends Component {
             default:
               return null;
           }
-
         }),
       });
     })
   }
 
   render() {
-    const { data, errors } = this.props
-    if (errors) {
-      return (
-        <Layout>
-          Error
-        </Layout>
-      )
-    }
-    const cases = data.allSanityCases.edges
+    const cases = Array.from(this.state.Cases);
 
     return (
       <Layout>
@@ -235,14 +234,14 @@ export default class index extends Component {
                     <div key={i} className="col-md-4">
                       <h4>
                         <img
-                          src={imageUrlFor(query.node.image)
+                          src={imageUrlFor(query.image)
                             .width(290)
                             .height(244)
                             .url()}
                           className="attachment-full size-full img-fluid"
-                          alt={query.node.name}
+                          alt={query.name}
                         />
-                        <a href={query.node.link} target="_blank" rel="noopener noreferrer" data-slimstat="5">{query.node.name}</a>
+                        <a href={query.link} target="_blank" rel="noopener noreferrer" data-slimstat="5">{query.name}</a>
                       </h4>
                     </div>
                   )

@@ -29,7 +29,7 @@ export default class AboutPage extends React.Component {
     return (
       <Layout>
         <SEO title="Om Os" />
-        <div className="py-5">
+        <div className="py-5 about">
           <div className="container py-5">
             <h1 className="text-center mb-5 font-weight-bold">{this.state.page.title}</h1>
             <BlockContent blocks={this.state.page.body || []} />

@@ -22,6 +22,10 @@ input:focus,
   box-shadow: none !important;
 }
 
+.about{
+  background: #e4e9d6;
+}
+
 .norden-navbar{
   position: fixed;
   width: 100%;
