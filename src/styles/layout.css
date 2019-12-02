@@ -466,6 +466,10 @@ input:focus,
 *   JAMStack Page Css
 ######################## */
 
+.services .letter-definition{
+   margin-bottom: 30px !important;
+}
+
 .jamstack h1 {
   font-size: 32px;
   line-height: 53px;

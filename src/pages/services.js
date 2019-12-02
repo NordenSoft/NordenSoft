@@ -32,7 +32,7 @@ export default class Services extends React.Component {
     return (
       <Layout>
         <SEO title="JAMStack" />
-        <div className="py-5">
+        <div className="py-5 services">
           <div className="container pt-5">
             <div className="jamstack">
               {typeof content.blockTop != 'undefined' ?
