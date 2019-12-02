@@ -86,13 +86,5 @@ module.exports = {
           })
       }
     },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://www.nordensoft.ch',
-        sitemap: 'https://www.nordensoft.ch/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
-    }
   ],
 }
