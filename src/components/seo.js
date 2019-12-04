@@ -111,6 +111,10 @@ function SEO({ description, lang, meta, keywords = [], title }) {
                 content: data.site.ogImage.asset.url
               },
               {
+                property: 'og:url',
+                content: 'http://www.nordensoft.dk'
+              },
+              {
                 name: 'twitter:card',
                 content: 'summary'
               },
@@ -148,7 +152,7 @@ function SEO({ description, lang, meta, keywords = [], title }) {
 }
 
 SEO.defaultProps = {
-  lang: 'en',
+  lang: 'da-DK',
   meta: [],
   keywords: []
 }
