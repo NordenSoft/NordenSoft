@@ -30,9 +30,9 @@ export default class footer extends React.Component{
                                     alt="Norden Soft"
                                     className="mb-4"
                                 />
-                                <p className="my-3">
-                                    <BlockText blocks={this.props.data.footerText} />
-                                </p>
+                                <div className="my-3">
+                                    {typeof this.props.data.footerText != 'undefined' ? <BlockText blocks={this.props.data.footerText} /> : null }
+                                </div>
                                 <div className="footer-top-title my-3">Følg os</div>
                                 <div className="footer-social">
                                     <a href={this.props.data.linkedin ? this.props.data.linkedin : '#'} className="footer-icon" target="_blank" rel="noopener noreferrer">

@@ -88,6 +88,15 @@ input:focus,
   justify-content: space-between;
 }
 
+@media screen and (max-width: 768px){
+  .figure-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 .footer{
   border-top: 1px solid #f1f1f1;
   color: #ffffff;
@@ -460,6 +469,20 @@ input:focus,
 .float-form form button:focus,
 .float-form form button:hover{
   color: #ffffff !important;
+}
+
+/* #####################
+*   Magento Page Css
+######################## */
+#magento h1{
+  font-size: 2rem;
+}
+
+/* #####################
+*   services Page Css
+######################## */
+.services h1{
+  font-size: 2rem;
 }
 
 /* #####################

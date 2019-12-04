@@ -5,16 +5,22 @@ import { StaticQuery, graphql } from 'gatsby'
 
 const detailsQuery = graphql`
   query SEOQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+    site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
       title
       description
       keywords
       author
+      analytics
+      ogImage {
+        asset {
+          url
+        }
+      }
     }
   }
 `
 
-function SEO ({ description, lang, meta, keywords = [], title }) {
+function SEO({ description, lang, meta, keywords = [], title }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -36,6 +42,10 @@ function SEO ({ description, lang, meta, keywords = [], title }) {
                 content: metaDescription
               },
               {
+                property: 'google-site-verification',
+                content: data.site.analytics
+              },
+              {
                 property: 'og:title',
                 content: title
               },
@@ -46,6 +56,10 @@ function SEO ({ description, lang, meta, keywords = [], title }) {
               {
                 property: 'og:type',
                 content: 'website'
+              },
+              {
+                property: 'og:image',
+                content: data.site.ogImage.asset.url
               },
               {
                 name: 'twitter:card',

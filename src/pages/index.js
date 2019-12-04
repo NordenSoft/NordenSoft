@@ -1,32 +1,13 @@
 import React, { Component } from 'react'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql } from 'gatsby'
+// import { graphql } from 'gatsby'
 import { imageUrlFor } from '../lib/image-url'
 import groq from 'groq'
 import client from '../../client'
 import BlockContent from '../components/block-content'
 import SimpleSlider from '../components/SimpleSlider'
 // import Img from "gatsby-image"
-
-export const query = graphql`
-  {
-    allSanityCases {
-      edges {
-        node {
-          id
-          image {
-            asset {
-              _id
-            }
-          }
-          link
-          name
-        }
-      }
-    }
-  }
-`
 
 export default class index extends Component {
   constructor(props) {
@@ -82,7 +63,7 @@ export default class index extends Component {
                       <div className="sliderContainer">
                         <div className="slideWrap">
                           <div className="sliderFrame"></div>
-                          <SimpleSlider data={post.slideImageSections}/>
+                          <SimpleSlider data={post.slideImageSections} />
                         </div>
                       </div>
                     </div>
@@ -112,7 +93,7 @@ export default class index extends Component {
               );
             case 'leftImageBlock':
               return (
-                <div className="container pt-5 pb-5 "  key={i}>
+                <div className="container pt-5 pb-5 " key={i}>
                   <h2 className="text-center py-3">{post.title}</h2>
                   <div className="row pt-5">
                     <div className="col-md-7">
@@ -133,7 +114,7 @@ export default class index extends Component {
               );
             case 'gridBlock1':
               return (
-                <div className="container-fluid kunder-bg pt-5 pb-5 "  key={i}>
+                <div className="container-fluid kunder-bg pt-5 pb-5 " key={i}>
                   <div className="container text-center pt-5 pb-5 ">
                     <div className="row">
                       <div className="col-md-12">
@@ -170,7 +151,7 @@ export default class index extends Component {
               );
             case 'beigeBlock':
               return (
-                <div className="container-fluid pt-5 pb-5  fleksibel-bg"  key={i}>
+                <div className="container-fluid pt-5 pb-5  fleksibel-bg" key={i}>
                   <div className="container pt-5 pb-5 ">
                     <div className="row">
                       <div className="col-md-12">
@@ -182,7 +163,7 @@ export default class index extends Component {
               );
             case 'rightImageBlock':
               return (
-                <div className="container-fluid kunder-bg pt-5 pb-5 "  key={i}>
+                <div className="container-fluid kunder-bg pt-5 pb-5 " key={i}>
                   <div className="container pt-5 pb-5 ">
                     <div className="row">
                       <div className="col-md-8 p-5">
@@ -216,7 +197,7 @@ export default class index extends Component {
     return (
       <Layout>
         <SEO title={'Norden Soft'} />
-        {this.state.Posts}
+        {typeof this.state.Posts == 'undefined' ? null : this.state.Posts}
         <div id="cases" className="container-fluid cases-block pt-5 pb-5 ">
           <div className="container text-center pt-5 pb-5 ">
             <div className="row">
@@ -224,7 +205,7 @@ export default class index extends Component {
                 <h2>Cases</h2>
                 <p>
                   Magento eco-system er hjem for 5 passionerede web designere og udvikler som er fokuserede på at udvikle utrolige ting til vores platform. Fra elegante temaer og praktiske apps til fuld funktionelle e-commerce hjemmesider. Vores design partnere arbejder utrætteligt på at skubbe grænserne for hvad der er muligt med Magento.
-              </p>
+                </p>
               </div>
             </div>
             <div className="row pt-5 pb-5  mt-5">
