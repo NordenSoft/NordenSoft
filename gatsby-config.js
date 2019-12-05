@@ -3,7 +3,7 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://www.nordensoft.ch/`,
+    siteUrl: `https://www.nordensoft.dk/`,
   },
 
   plugins: [
@@ -89,8 +89,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.nordensoft.ch',
-        sitemap: 'https://www.nordensoft.ch/sitemap.xml',
+        host: 'https://www.nordensoft.dk',
+        sitemap: 'https://www.nordensoft.dk/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     }

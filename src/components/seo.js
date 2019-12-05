@@ -112,7 +112,7 @@ function SEO({ description, lang, meta, keywords = [], title }) {
               },
               {
                 property: 'og:url',
-                content: 'https://www.nordensoft.ch'
+                content: 'https://www.nordensoft.dk'
               },
               {
                 name: 'twitter:card',
