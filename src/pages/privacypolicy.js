@@ -1,43 +1,42 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+// import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import BlockContent from '../components/block-content'
+import groq from 'groq'
+import client from '../../client'
 
-export const query = graphql`
-  query privacyPageQuery {
-    page: sanityPage(_id: { regex: "/(drafts.|)privacypolicy/" }) {
-      id
-      title
-      _rawBody
+export default class privacypolicy extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: '',
+        }
+        this.renderData = this.renderData.bind(this);
     }
-  }
-`
 
-const privacypolicy = props => {
+    componentDidMount() {
+        this.renderData();
+    }
 
-    const { data, errors } = props
+    async renderData() {
+        await client.fetch(groq`*[_type == 'page' && _id == 'privacypolicy']{title, body}`).then(res => {
+            let data = res[0];
+            this.setState({ data });
+        })
+    }
 
-    if (errors) {
+    render() {
         return (
             <Layout>
-                {JSON.stringify(errors)}
-           </Layout>
+                <SEO title={this.state.data.title} />
+                <div className="py-5">
+                    <div className="container py-5">
+                        <BlockContent blocks={this.state.data.body || []} />
+                    </div>
+                </div>
+            </Layout>
         )
     }
-
-    const page = data.page
-    
-    return (
-        <Layout>
-            <SEO title="Om Os" />
-            <div className="py-5">
-                <div className="container py-5">
-                    <BlockContent blocks={page._rawBody || []} />
-                </div>
-            </div>
-        </Layout>
-    )
 }
 
-export default privacypolicy

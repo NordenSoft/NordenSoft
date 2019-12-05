@@ -1,44 +1,41 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+// import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import BlockContent from '../components/block-content'
+import groq from 'groq'
+import client from '../../client'
 
-export const query = graphql`
-  query termsPageQuery {
-    page: sanityPage(_id: { regex: "/(drafts.|)terms/" }) {
-      id
-      title
-      _rawBody
+export default class terms extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: '',
+        }
+        this.renderData = this.renderData.bind(this);
     }
-  }
-`
 
+    componentDidMount() {
+        this.renderData();
+    }
 
-const terms = props => {
+    async renderData() {
+        await client.fetch(groq`*[_type == 'page' && _id == 'terms']{title, body}`).then(res => {
+            let data = res[0];
+            this.setState({ data });
+        })
+    }
 
-    const { data, errors } = props
-
-    if (errors) {
+    render() {
         return (
             <Layout>
-                {JSON.stringify(errors)}
-           </Layout>
+                <SEO title={this.state.data.title} />
+                <div className="py-5">
+                    <div className="container py-5">
+                        <BlockContent blocks={this.state.data.body || []} />
+                    </div>
+                </div>
+            </Layout>
         )
     }
-
-    const page = data.page
-
-    return (
-        <Layout>
-            <SEO title={page.title} />
-            <div className="py-5">
-                <div className="container py-5">
-                    <BlockContent blocks={page._rawBody || []} />
-                </div>
-            </div>
-        </Layout>
-    )
 }
-
-export default terms

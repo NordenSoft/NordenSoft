@@ -36,9 +36,6 @@ export default class magento extends Component {
                 <SEO title="magento" />
                 <div className="py-5">
                     <div className="container py-5">
-                        <code>
-                            {/* {JSON.stringify(blockContent)} */}
-                        </code>
                         {/* Magento Block */}
                         <div id="magento" className="container text-center py-5">
                             <div className="row">
