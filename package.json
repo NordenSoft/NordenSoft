@@ -7,7 +7,7 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
     "date-fns": "^2.8.0",
-    "gatsby": "^2.17.11",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-offline": "^3.0.19",
